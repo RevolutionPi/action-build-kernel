@@ -35,8 +35,8 @@ fi
 
 dpkg-buildpackage -a armhf -b -us -uc
 
-FILENAME_KERNEL=$(basename ${BUILDDIR}/raspberrypi-kernel_*.deb)
-FILENAME_HEADERS=$(basename ${BUILDDIR}/raspberrypi-kernel-headers_*.deb)
+FILENAME_KERNEL=$(basename ${BUILD_DIR}/raspberrypi-kernel_*.deb)
+FILENAME_HEADERS=$(basename ${BUILD_DIR}/raspberrypi-kernel-headers_*.deb)
 
 echo "::set-output name=filename_kernel::${FILENAME_KERNEL}"
 echo "::set-output name=filename_headers::${FILENAME_HEADERS}"
