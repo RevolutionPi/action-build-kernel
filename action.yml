@@ -1,0 +1,23 @@
+name: 'Build Kernel Package'
+description: 'Builds revpi kernel package'
+inputs:
+  changelog_author:
+    description: 'name of changelog author'
+    required: true
+    default: 'Revolution Pi Development Team'
+  changelog_author_email:
+    description: 'email of changelog author'
+    required: true
+    default: 'development@revolutionpi.de'
+  changelog_update:
+    description: 'automatically update the changelog and version based on date and commit id'
+    required: true
+    default: 1
+outputs:
+  filename_kernel:
+    description: 'name of the kernel package'
+  filename_headers:
+    description: 'name of the kernel headers package'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
