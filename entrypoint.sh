@@ -7,15 +7,22 @@ export DEBIAN_FRONTEND=noninteractive
 export LD_PRELOAD=libeatmydata.so
 export LD_LIBRARY_PATH=/usr/lib/libeatmydata
 
-BUILD_DIR='/github/workspace/'
+BUILD_DIR=$GITHUB_WORKSPACE
+
+echo $BUILD_DIR
+
+(cd $BUILD_DIR/linux && ls && git rev-parse --abbrev-ref HEAD)
+(cd $BUILD_DIR/piControl && ls && git rev-parse --abbrev-ref HEAD)
+(cd $BUILD_DIR/kernelbakery && ls && git rev-parse --abbrev-ref HEAD)
 
 if [[ ! -d "${BUILD_DIR}/kernelbakery" ]] || [[ ! -d "${BUILD_DIR}/piControl" ]] || [[ ! -d "${BUILD_DIR}/linux" ]] ; then
         >&2 echo "Missing required repos in ${BUILD_DIR}"
-            exit
+            ls ${BUILD_DIR}
+            exit 1
 fi
 
 cd ${BUILD_DIR}/kernelbakery
-LINUXDIR=$PWD/../linux PIKERNELMODDIR=$PWD/../piControl debian/update.sh
+LINUXDIR=${BUILD_DIR}/linux PIKERNELMODDIR=${BUILD_DIR}/piControl debian/update.sh
 
 if [[ ${INPUT_CHANGELOG_UPDATE:-1} -eq 1 ]]; then
 	BUILD_DATE=$(date "+%y%m%d%H%M%S")
