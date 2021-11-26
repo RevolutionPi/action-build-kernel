@@ -28,6 +28,8 @@ Filename of the kernel-headers package
 
 ## Example usage
 
+```
 uses: RevolutionPi/action-build-kernel@v1
 with:
   changelog_update: 1
+```
