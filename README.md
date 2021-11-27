@@ -16,6 +16,14 @@ This action buils a kernel for Revolution Pi and creates the debian packages for
 
 **Required** Switch for automatically update of the changelog based on build date and commit id. Default `1`.
 
+## `picontrol_branch`
+
+**Required** Branch of the piControl repository which is used. Default `master`.
+
+## `kernelbakery_branch`
+
+**Required** Branch of the kernelbakery repository which is used. Default `master`.
+
 ## Outputs
 
 ## `filename_kernel`
