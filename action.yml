@@ -19,6 +19,8 @@ inputs:
   picontrol_branch:
     required: true
     default: master
+  build_commit:
+    required: false
 outputs:
   filename_kernel:
     description: 'name of the kernel package'
