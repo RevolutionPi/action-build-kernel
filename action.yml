@@ -24,6 +24,9 @@ inputs:
   build_commit:
     description: "SHA1 hash of the commit"
     required: false
+  arch:
+    description: "build arch (eg. arm or arm64)"
+    required: false
 outputs:
   filename_kernel:
     description: 'name of the kernel package'
