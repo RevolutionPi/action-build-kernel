@@ -8,6 +8,7 @@ RUN apt-get update \
 && apt-get install -y \
     device-tree-compiler \
     gcc-arm-linux-gnueabihf \
+    gcc-aarch64-linux-gnu \
     build-essential:native debhelper quilt bc \
     kmod rsync bison flex libssl-dev \
     git git-buildpackage \
