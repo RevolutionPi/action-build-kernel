@@ -12,14 +12,17 @@ inputs:
   changelog_update:
     description: 'automatically update the changelog and version based on date and commit id'
     required: true
-    default: 1
+    default: "1"
   kernelbakery_branch:
+    description: "branch to use from kernelbakery repository"
     required: true
     default: master
   picontrol_branch:
+    description: "branch to use from piControl repository"
     required: true
     default: master
   build_commit:
+    description: "SHA1 hash of the commit"
     required: false
 outputs:
   filename_kernel:
