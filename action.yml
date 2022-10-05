@@ -34,7 +34,7 @@ outputs:
     description: 'name of the kernel headers package'
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://ghcr.io/revolutionpi/action-build-kernel:latest'
 branding:
   icon: 'code'
   color: 'orange'
