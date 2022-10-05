@@ -7,7 +7,7 @@ export DEBIAN_FRONTEND=noninteractive
 export LD_PRELOAD=libeatmydata.so
 export LD_LIBRARY_PATH=/usr/lib/libeatmydata
 
-export ARCH=${INPUT_KERNELBAKERY_BRANCH:-arm}
+export ARCH=${INPUT_ARCH:-arm}
 
 if [ "$ARCH" == "arm64"]; then
 	DPKG_ARCH=arm64
